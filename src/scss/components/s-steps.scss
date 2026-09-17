@@ -1,0 +1,74 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-steps {
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    @include laptop-min {
+      gap: 20px;
+    }
+  }
+  &__item {
+    flex: 1 1 calc(25% - 40px);
+
+    @include laptop-middle {
+      flex-basis: calc(33% - 40px);
+    }
+    @include laptop-min {
+      flex-basis: calc(50% - 20px);
+    }
+    @include tablet-min {
+      flex-basis: 100%;
+    }
+  }
+  &__item-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .item-circle {
+      @include flex-center;
+      border: 1px solid var(--ghost);
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      border-radius: 50%;
+
+      img {
+        display: block;
+        max-width: 24px;
+      }
+    }
+    .item-separator {
+      flex: 1;
+      border-bottom: 1px dashed var(--ghost);
+    }
+    .item-num {
+      font-weight: 700;
+      font-style: italic;
+      font-size: 24px;
+      color: var(--ghost);
+    }
+  }
+  &__item-title {
+    margin: 20px 0px 0px 0px;
+    font-weight: 600;
+    font-size: 20px;
+    @include tablet {
+      font-size: 18px;
+      margin-top: 15px;
+    }
+    @include tablet-min {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  }
+  &__content {
+    margin-top: 10px;
+    @include tablet-min {
+      margin-top: 5px;
+    }
+  }
+}

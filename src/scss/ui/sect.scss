@@ -1,0 +1,62 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.sect-m {
+  margin: 100px 0px;
+  scroll-margin-top: 140px;
+
+  @include laptop {
+    margin: 80px 0px;
+  }
+  @include laptop-min {
+    margin: 60px 0px;
+    scroll-margin-top: 90px;
+  }
+  @include tablet-min {
+    scroll-margin-top: 75px;
+    margin: 40px 0px;
+  }
+}
+.sect-p {
+  padding: 100px 0px;
+
+  @include laptop {
+    padding: 80px 0px;
+  }
+  @include laptop-min {
+    padding: 60px 0px;
+  }
+  @include tablet-min {
+    padding: 40px 0px;
+  }
+}
+
+.bg-athens {
+  background-color: var(--athens);
+}
+
+.sect-head {
+  margin-bottom: 40px;
+  @include laptop-middle {
+    margin-bottom: 30px;
+  }
+  @include tablet {
+    margin-bottom: 20px;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @include tablet {
+      gap: 10px;
+    }
+  }
+  &__text {
+    color: var(--storm);
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,27 @@
+@use "./base/fonts";
+@use "./base/normalize";
+@use "./base/vars";
+@use "./base/templates";
+@use "./base/settings";
+@use "./base/media";
+@use "./base/body-config";
+@use "./base/config-container";
+
+@use "./ui/button";
+@use "./ui/list";
+@use "./ui/title";
+@use "./ui/tab";
+@use "./ui/social";
+@use "./ui/content-box";
+@use "./ui/form";
+@use "./ui/sect";
+@use "./ui/card-car";
+
+@use "./components/header";
+@use "./components/burger";
+
+@use "./components/s-hero";
+@use "./components/s-steps";
+@use "./components/s-catalog";
+
+@use "./components/footer";

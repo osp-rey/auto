@@ -1,0 +1,165 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.form-control {
+  width: 100%;
+}
+
+.input {
+  --border: rgba(5, 11, 21, 0.1);
+  --background: white;
+  --color: black;
+  --border-h: rgba(5, 11, 21, 0.5);
+  --background-h: white;
+  --color-h: black;
+  --border-f: rgba(5, 11, 21, 1);
+  --background-f: white;
+  --color-f: black;
+
+  --placeholder: #737787;
+
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  width: 100%;
+  padding: 18px 20px;
+  outline: none;
+  border-radius: 8px;
+
+  color: var(--color);
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+
+  @include hover {
+    background-color: var(--background-h);
+    border-color: var(--border-h);
+    color: var(--color-h);
+  }
+  @include tablet {
+    padding: 14px 20px;
+  }
+
+  &:focus {
+    background-color: var(--background-f) !important;
+    border-color: var(--border-f) !important;
+    color: var(--color-f) !important;
+  }
+
+  &::placeholder {
+    color: var(--placeholder);
+    @include tablet {
+      font-size: 14px;
+    }
+  }
+
+  &.wpcf7-not-valid {
+    --border: var(--error);
+    --border-h: var(--error);
+    --border-f: var(--error);
+
+    --placeholder: rgba(220, 50, 50, 0.7);
+  }
+}
+
+.check-wrap {
+  --color: var(--storm);
+
+  position: relative;
+  z-index: 1;
+
+  input[type="checkbox"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+
+    &:checked + .wpcf7-list-item-label {
+      &::before {
+        background: var(--url) center / 12px auto no-repeat;
+        border-color: var(--border-a);
+        background-color: var(--background-a);
+      }
+    }
+  }
+
+  .wpcf7-list-item-label {
+    display: flex;
+    align-items: start;
+    gap: 15px;
+    width: fit-content;
+    color: var(--color);
+    cursor: pointer;
+    user-select: none;
+
+    a {
+      --color: inherit;
+      --color-h: var(--primary);
+      
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color .3s ease;
+
+      @include hover {
+        color: var(--color-h);
+      }
+    }
+
+    &::before {
+      --border: var(--ghost);
+      --background: transparent;
+      --border-a: var(--primary);
+      --background-a: var(--primary);
+      --url: url("@img/check-white.svg");
+
+      content: "";
+      display: block;
+      border-radius: 4px;
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--border);
+      background-color: var(--background);
+      flex-shrink: 0;
+
+      transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+    }
+  }
+}
+.file-wrap {
+  position: relative;
+  overflow: hidden;
+
+  .wpcf7-form-control-wrap {
+    display: none;
+  }
+
+  .file-btn {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: fit-content;
+
+    transition: color .3s ease;
+
+    @include hover {
+      color: var(--primary);
+    }
+    @include tablet {
+      padding: 12px 10px;
+      border-radius: 8px;
+      background-color: var(--athens);
+      width: 100%;
+    }
+
+    i {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+  }
+}

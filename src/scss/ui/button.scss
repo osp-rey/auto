@@ -1,0 +1,30 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
+.btn-s {
+  --background: var(--linear);
+  --color: white;
+
+  @include flex-center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: var(--background);
+  padding: 18px 30px;
+  border-radius: 8px;
+
+  user-select: none;
+  color: var(--color);
+  font-weight: 500;
+  text-align: center;
+
+  transition: opacity .3s ease;
+
+  @include hover {
+    opacity: 0.8;
+  }
+  @include tablet {
+    font-size: 14px;
+    padding: 15px 20px;
+  }
+}

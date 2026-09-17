@@ -1,0 +1,175 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.header {
+  padding: 20px 0px;
+  color: white;
+  background-color: var(--dark);
+  @include laptop-min {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  @include tablet {
+    padding: 10px 0px;
+  }
+
+  &__wrap {
+    @include flex-between;
+    position: relative;
+    gap: 50px;
+    @include laptop {
+      gap: 30px;
+    }
+    @include laptop-min {
+      position: relative;
+    }
+    @include tablet {
+      gap: 20px;
+    }
+  }
+  &__logo {
+    display: block;
+    width: 320px;
+    max-width: 100%;
+
+    @include laptop-middle {
+      width: 260px;
+    }
+    @include tablet-min {
+      width: 200px;
+    }
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    @include laptop {
+      gap: 30px;
+    }
+    @include tablet {
+      gap: 20px;
+    }
+    @include tablet-min {
+      gap: 15px;
+    }
+  }
+  &__address {
+    font-size: 16px;
+    @include laptop {
+      font-size: 14px;
+    }
+    @include laptop-min {
+      display: none;
+    }
+  }
+  &__time {
+    font-weight: 600;
+    font-size: 16px;
+    padding: 7px 12px;
+    background-color: var(--tuna);
+    border-radius: 6px;
+
+    @include laptop {
+      font-size: 14px;
+    }
+    @include laptop-min {
+      position: absolute;
+      bottom: -19px;
+      right: 48px;
+      transform: translateY(100%);
+      font-size: 14px;
+      padding: 0px 10px 6px 10px;
+      border-radius: 0 0 6px 6px;
+      background-color: var(--dark);
+    }
+    @include tablet {
+      bottom: -9px;
+    }
+  }
+  &__tel {
+    font-weight: 800;
+    font-style: italic;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+
+    transition: color 0.3s ease;
+
+    @include hover {
+      color: var(--primary);
+    }
+    @include laptop {
+      font-size: 20px;
+    }
+    @include laptop-min {
+      display: none;
+    }
+  }
+  &__burger-btn {
+    @include flex-center;
+    flex-shrink: 0;
+
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+
+    transition: color 0.3s ease;
+    @include hover {
+      color: var(--primary);
+    }
+
+    @media (min-width: 1026px) {
+      display: none;
+    }
+  }
+}
+
+
+.header-n {
+  position: sticky;
+  padding: 10px 0px;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+
+  @include laptop-min {
+    position: absolute;
+    left: -9999px;
+    z-index: -9999;
+    opacity: 0
+  }
+
+  &__wrap {
+    @include flex-between;
+    gap: 30px;
+
+    @include laptop-middle {
+      gap: 20px;
+    }
+  }
+  &__nav {
+  }
+  &__list {
+    display: flex;
+    gap: 50px;
+    flex-shrink: 0;
+
+    @include laptop-middle {
+      gap: 30px;
+    }
+
+    a {
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: color .3s ease;
+    
+      @include hover {
+        color: var(--primary);
+      }
+    }
+  }
+  &__btn {
+  }
+}

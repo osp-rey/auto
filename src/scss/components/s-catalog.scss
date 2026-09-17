@@ -1,0 +1,35 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
+.s-catalog {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &__decor {
+    position: absolute;
+    display: block;
+    z-index: -1;
+    pointer-events: none;
+
+    &._right {
+      top: -50px;
+      right: -110px;
+    }
+    &._left {
+      bottom: 270px;
+      left: -130px;
+    }
+  }
+  &__slider {
+  }
+  &__slider-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    
+    .swiper-slide {
+      box-sizing: border-box;
+    }
+  }
+}
