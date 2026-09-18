@@ -1,15 +1,20 @@
-@use '../base/templates' as *;
-@use '../base/media' as *;
+@use "../base/templates" as *;
+@use "../base/media" as *;
 
 .btn-s {
+  --border: transparent;
   --background: var(--linear);
   --color: white;
+  --border-h: transparent;
+  --background-h: var(--linear);
+  --color-h: white;
 
   @include flex-center;
   cursor: pointer;
   border: none;
   outline: none;
   background: var(--background);
+  border: 1px solid var(--border);
   padding: 18px 30px;
   border-radius: 8px;
 
@@ -18,13 +23,29 @@
   font-weight: 500;
   text-align: center;
 
-  transition: opacity .3s ease;
+  transition:
+    opacity 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 
   @include hover {
     opacity: 0.8;
+    background: var(--background-h);
+    color: var(--color-h);
+    border-color: var(--border-h);
   }
   @include tablet {
     font-size: 14px;
     padding: 15px 20px;
+  }
+
+  &._outline {
+    --border: var(--ghost);
+    --background: transparent;
+    --color: var(--black);
+    --border-h: var(--black);
+    --background-h: transparent;
+    --color-h: var(--black);
   }
 }
