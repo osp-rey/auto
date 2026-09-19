@@ -1,0 +1,113 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-marks {
+  &__head {
+    text-align: center;
+    @include tablet {
+      text-align: start;
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 40px;
+
+    @include laptop-min {
+      margin-bottom: 30px;
+    }
+    @include tablet {
+      justify-content: flex-start;
+    }
+    @include tablet-min {
+      margin-bottom: 20px;
+    }
+
+    li {
+      border-radius: 6px;
+      padding: 10px 20px;
+      background-color: var(--athens);
+
+      @include tablet {
+        padding: 8px 16px;
+      }
+    }
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    gap: 10px;
+
+    @include desktop {
+      grid-template-columns: repeat(10, 1fr);
+    }
+    @include laptop-middle {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    @include tablet {
+      gap: 5px;
+    }
+
+    [data-more-item] {
+      @media (min-width: 1540px) {
+        &:nth-child(-n + 52) {
+          display: block;
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (min-width: 1200px) {
+        &:nth-child(-n + 30) {
+          display: block;
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @include laptop-middle {
+        &:nth-child(-n + 20) {
+          display: block;
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 30px 0 rgba(5, 11, 21, 0.1);
+    padding: 15px;
+    gap: 5px;
+    border-radius: 10px;
+
+    text-align: center;
+    font-size: 14px;
+
+    img {
+      display: block;
+      width: 90px;
+    }
+    @include tablet {
+      padding: 5px 10px;
+      font-size: 10px;
+
+      img {
+        width: 50px;
+      }
+    }
+  }
+  &__btn {
+    width: 100%;
+    margin-top: 40px;
+    @include laptop-min {
+      margin-top: 30px;
+    }
+    @include tablet-min {
+      margin-top: 20px;
+    }
+  }
+}

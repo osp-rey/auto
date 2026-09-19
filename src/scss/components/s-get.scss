@@ -1,0 +1,123 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-get {
+  position: relative;
+  overflow: hidden;
+  @include laptop-middle {
+    padding: 60px 0px;
+  }
+  @include tablet {
+    padding: 40px 0px;
+  }
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include laptop-middle {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    @include tablet-min {
+      gap: 20px;
+    }
+  }
+  &__block {
+    --offset: 60px;
+    position: relative;
+    padding: var(--offset) 0px;
+    z-index: 1;
+
+    @include laptop {
+      --offset: 40px;
+    }
+    @include laptop-middle {
+      padding: 0 !important;
+    }
+
+    &:nth-child(odd) {
+      padding-right: var(--offset);
+    }
+    &:nth-child(even) {
+      padding-left: var(--offset);
+    }
+
+    &._center {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    user-select: none;
+
+    @include laptop {
+      opacity: 0.7;
+    }
+    @include laptop-middle {
+      display: none;
+    }
+
+    img {
+      display: block;
+      object-fit: cover;
+      object-position: top 0 right 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+  &__info {
+    max-width: 460px;
+    @include laptop-middle {
+      max-width: none;
+    }
+  }
+  &__content {
+    margin-top: 20px;
+    font-size: 20px;
+    max-width: 400px;
+    @include laptop-middle {
+      max-width: none;
+      font-size: 18px;
+    }
+    @include tablet {
+      font-size: 16px;
+    }
+    @include tablet-min {
+      font-size: 14px;
+    }
+  }
+  &__form {
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      row-gap: 20px;
+
+      @include tablet {
+        gap: 10px;
+      }
+
+      .form-control {
+        &._full {
+          grid-column: 2 span;
+        }
+
+        @include tablet-min {
+          grid-column: 2 span;
+        }
+      }
+    }
+    .btn-s[type="submit"] {
+      width: 100%;
+    }
+  }
+}
