@@ -1,0 +1,138 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-docs {
+  .container {
+    @include tablet {
+      padding: 0;
+    }
+  }
+  &__body {
+    position: relative;
+    overflow: hidden;
+    padding: 70px 30px;
+    border-radius: 20px;
+    background-color: var(--athens);
+    z-index: 1;
+
+    @include laptop {
+      padding: 50px 25px;
+    }
+    @include tablet {
+      padding: 40px 10px;
+    }
+  }
+  &__body-inside {
+    position: relative;
+    @include flex-between;
+    gap: 30px;
+    width: 1300px;
+    margin: 0 auto;
+    max-width: 100%;
+    z-index: 1;
+
+    @include laptop-min {
+      flex-wrap: wrap;
+    }
+    @include tablet {
+      gap: 20px;
+    }
+  }
+  &__decor {
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    max-width: none;
+
+    &._left {
+      left: -170px;
+      @include laptop-min {
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &._right {
+      right: -100px;
+      @include laptop-min {
+        display: none;
+      }
+    }
+  }
+  &__info {
+    flex: 0 1 600px;
+    @include laptop-min {
+      flex: auto;
+      width: 100%;
+    }
+  }
+  &__title {
+  }
+  &__grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    @include laptop-min {
+      margin-top: 30px;
+    }
+    @include tablet {
+      margin-top: 20px;
+      gap: 15px;
+    }
+    @include tablet-min {
+      gap: 10px;
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    @include laptop-middle {
+      flex-direction: column;
+      align-items: start;
+    }
+    @include tablet {
+      gap: 10px
+    }
+
+    .item-circle {
+      @include flex-center;
+      width: 48px;
+      height: 48px;
+      background-color: var(--primary);
+      flex-shrink: 0;
+      border-radius: 50%;
+    }
+  }
+  &__block {
+    flex: 0 1 600px;
+    border-radius: 12px;
+    padding: 40px;
+    background-color: var(--dark);
+    color: white;
+    @include laptop-min {
+      flex: auto;
+      width: 100%;
+    }
+    @include tablet {
+      padding: 30px;
+    }
+    @include tablet-min {
+      padding: 20px;
+    }
+  }
+  &__block-btn {
+    width: 100%;
+    margin-top: 40px;
+    @include laptop-min {
+      margin-top: 30px;
+    }
+    @include tablet {
+      margin-top: 20px;
+    }
+  }
+}
