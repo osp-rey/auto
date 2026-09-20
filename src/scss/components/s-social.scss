@@ -1,0 +1,153 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-social {
+  overflow: hidden;
+
+  .container {
+    @include tablet {
+      padding: 0;
+    }
+  }
+  &__body {
+    position: relative;
+    padding: 70px;
+    border-radius: 20px;
+    background-color: var(--athens);
+    z-index: 1;
+
+    @include laptop {
+      padding: 50px 30px;
+    }
+    @include laptop-min {
+      padding: 40px 20px;
+    }
+    @include tablet {
+      padding: 40px 10px 10px 10px;
+    }
+  }
+  &__wrap {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    width: 920px;
+    max-width: 100%;
+    @include laptop {
+      flex-wrap: wrap;
+      gap: 30px;
+      width: 700px;
+    }
+    @include tablet {
+      gap: 20px;
+    }
+  }
+  &__info {
+    flex: 1;
+    @include laptop-middle {
+      flex: auto;
+      max-width: 550px;
+    }
+  }
+  &__title {
+  }
+  &__info-content {
+    margin-top: 20px;
+  }
+  &__buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 280px;
+    max-width: 100%;
+    @include laptop {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap
+    }
+    @include tablet {
+      gap: 10px;
+    }
+  }
+  &__btn {
+    @include flex-center;
+    gap: 10px;
+    padding: 15px 35px;
+    user-select: none;
+    min-height: 58px;
+    border-radius: 8px;
+    width: 100%;
+
+    white-space: nowrap;
+    font-weight: 500;
+    color: white;
+
+    transition: opacity 0.3s ease;
+
+    @include hover {
+      opacity: 0.8;
+    }
+    @include laptop {
+      flex: 1 1 calc(50% - 15px);
+    }
+    @include tablet {
+      min-height: 48px;
+    }
+
+    i {
+      flex-shrink: 0;
+      font-size: 18px;
+    }
+
+    &._tg {
+      background: #2aabee;
+    }
+    &._max {
+      background:
+        linear-gradient(135deg, #1d3eee 0%, #ba15f2 100%),
+        radial-gradient(
+          40.7% 40.7% at 70% 27.5%,
+          #7432e3 0%,
+          rgba(116, 50, 227, 0) 100%
+        ),
+        radial-gradient(
+          61.9% 61.9% at 7.5% 92.5%,
+          #32b7fc 0%,
+          rgba(52, 185, 252, 0) 100%
+        );
+    }
+    &._whats {
+      background: #25d366;
+    }
+  }
+  &__img {
+    position: absolute;
+    display: block;
+    pointer-events: none;
+    right: -70px;
+    top: 0;
+    z-index: -1;
+
+    @include laptop {
+      width: 600px;
+    }
+    @include laptop-min {
+      position: static;
+      margin: 15px auto 0 auto;
+    }
+  }
+  &__decor {
+    position: absolute;
+    pointer-events: none;
+    top: 30px;
+    right: 250px;
+    z-index: -2;
+
+    @include tablet {
+      width: 210px;
+      right: auto;
+      top: auto;
+      left: 15px;
+      bottom: -135px;
+    }
+  }
+}

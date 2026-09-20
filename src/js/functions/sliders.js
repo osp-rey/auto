@@ -2,21 +2,21 @@ export default function sliders() {
   const cardCarSliders = document.querySelectorAll(".card-car__slider");
 
   if (cardCarSliders.length) {
-    cardCarSliders.forEach(slider => {
+    cardCarSliders.forEach((slider) => {
       const swiper = new Swiper(slider, {
         speed: 900,
         spaceBetween: 5,
         slidesPerView: 1,
         navigation: {
           prevEl: slider.querySelector(".slider-arrow._prev"),
-          nextEl: slider.querySelector(".slider-arrow._next")
+          nextEl: slider.querySelector(".slider-arrow._next"),
         },
         pagination: {
           el: slider.querySelector(".slider-pagination-r"),
-          clickable: true
-        }
-      })
-    })
+          clickable: true,
+        },
+      });
+    });
   }
 
   const catalogSlider = document.querySelector(".s-catalog__slider");
@@ -28,9 +28,35 @@ export default function sliders() {
       spaceBetween: 10,
       pagination: {
         el: ".s-catalog .slider-pagination",
-        clickable: true
+        clickable: true,
       },
-      
-    })
+    });
+  }
+
+  const reviewsSlider = document.querySelector(".s-reviews__slider");
+
+  if (reviewsSlider) {
+    const swiper = new Swiper(reviewsSlider, {
+      speed: 900,
+      spaceBetween: 10,
+      slidesPerView: "auto",
+      // autoplay: {
+      //   delay: 5500,
+      // },
+      pagination: {
+        el: ".s-reviews .slider-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        1200: {
+          spaceBetween: 20,
+          slidesPerView: 4,
+        },
+        768: {
+          spaceBetween: 20,
+          slidesPerView: 3,
+        },
+      },
+    });
   }
 }

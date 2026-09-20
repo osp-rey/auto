@@ -18,6 +18,7 @@
 @use "./ui/card-car";
 @use "./ui/slider";
 @use "./ui/more-item";
+@use "./ui/modal";
 
 @use "./components/header";
 @use "./components/burger";
@@ -29,5 +30,8 @@
 @use "./components/s-marks";
 @use "./components/s-why";
 @use "./components/s-docs";
+@use "./components/s-adv";
+@use "./components/s-social";
+@use "./components/s-reviews";
 
 @use "./components/footer";

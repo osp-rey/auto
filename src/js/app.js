@@ -4,6 +4,7 @@ import heroOffset from "./functions/heroOffset.js";
 import inputmask from "./functions/inputmask.js";
 import more from "./functions/more.js";
 import sliders from "./functions/sliders.js";
+import tab from "./functions/tabs.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   burger();
@@ -12,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   heroOffset();
   sliders();
   more();
+  tab();
 
   Fancybox.bind("[data-fancybox]", {
     closeButton: false,
