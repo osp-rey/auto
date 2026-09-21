@@ -1,0 +1,85 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-faq {
+  &__spollers {
+    display: grid;
+    align-items: start;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+
+    @include laptop {
+      gap: 30px;
+    }
+    @include laptop {
+      gap: 15px;
+    }
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+  }
+  &__spollers-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  &__spoller {
+    background-color: white;
+    box-shadow: 0 0 30px 0 rgba(5, 11, 21, 0.1);
+    border-radius: 10px;
+  }
+  &__spoller-btn {
+    @include flex-between;
+    padding: 14px 20px;
+    cursor: pointer;
+    user-select: none;
+    gap: 15px;
+
+    font-weight: 600;
+    font-size: 18px;
+
+    @include laptop {
+      font-size: 16px;
+    }
+
+    &._spoller-active {
+      .item-circle {
+        background-color: var(--primary);
+        &::before {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    .item-circle {
+      position: relative;
+      @include flex-center;
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: var(--ghost);
+
+      transition: background-color 0.3s ease;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        width: 16px;
+        height: 2px;
+        border-radius: 6px;
+        background-color: white;
+
+        transition: transform 0.3s ease;
+      }
+      &::before {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  &__spoller-content {
+    padding: 5px 20px 14px 20px;
+  }
+}

@@ -1,0 +1,14 @@
+:root {
+  --dark: #20252d;
+  --charade: #2b313b;
+  --tuna: #30353d;
+  --black: #050b15;
+  --athens: #eff2f5;
+  --athens-d: #d8d9db;
+  --primary: #dc020a;
+  --primary-h: #bb040a;
+  --error: #dc3232;
+  --ghost: #cbced7;
+  --storm: #737787;
+  --linear: linear-gradient(268.83deg, #ea0a12 0%, #c5060b 100%);
+}

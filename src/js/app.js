@@ -2,8 +2,10 @@ import burger from "./functions/burger.js";
 import fileWrap from "./functions/fileWrap.js";
 import heroOffset from "./functions/heroOffset.js";
 import inputmask from "./functions/inputmask.js";
+import map from "./functions/map.js";
 import more from "./functions/more.js";
 import sliders from "./functions/sliders.js";
+import spoller from "./functions/spollers.js";
 import tab from "./functions/tabs.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -14,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
   sliders();
   more();
   tab();
+  map();
+  spoller();
 
   Fancybox.bind("[data-fancybox]", {
     closeButton: false,

@@ -1,0 +1,166 @@
+.s-docs__body {
+  position: relative;
+  overflow: hidden;
+  padding: 70px 30px;
+  border-radius: 20px;
+  background-color: var(--athens);
+  z-index: 1;
+}
+
+.s-docs__body-inside {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  width: 1300px;
+  margin: 0 auto;
+  max-width: 100%;
+  z-index: 1;
+}
+
+.s-docs__decor {
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+  max-width: none;
+}
+
+.s-docs__decor._left {
+  left: -170px;
+}
+
+.s-docs__decor._right {
+  right: -100px;
+}
+
+.s-docs__info {
+  flex: 0 1 600px;
+}
+
+.s-docs__grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.s-docs__item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.s-docs__item .item-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: var(--primary);
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.s-docs__block {
+  flex: 0 1 600px;
+  border-radius: 12px;
+  padding: 40px;
+  background-color: var(--dark);
+  color: white;
+}
+
+.s-docs__block-btn {
+  width: 100%;
+  margin-top: 40px;
+}
+
+@media (max-width: 1365px) {
+  .s-docs__body {
+    padding: 50px 25px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .s-docs__item {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media (max-width: 1025px) {
+  .s-docs__body-inside {
+    flex-wrap: wrap;
+  }
+
+  .s-docs__decor._left {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .s-docs__decor._right {
+    display: none;
+  }
+
+  .s-docs__info {
+    flex: auto;
+    width: 100%;
+  }
+
+  .s-docs__grid {
+    margin-top: 30px;
+  }
+
+  .s-docs__block {
+    flex: auto;
+    width: 100%;
+  }
+
+  .s-docs__block-btn {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .s-docs .container {
+    padding: 0;
+  }
+
+  .s-docs__body {
+    padding: 40px 10px;
+  }
+
+  .s-docs__body-inside {
+    gap: 20px;
+  }
+
+  .s-docs__grid {
+    margin-top: 20px;
+    gap: 15px;
+  }
+
+  .s-docs__item {
+    gap: 10px;
+  }
+
+  .s-docs__block {
+    padding: 30px;
+  }
+
+  .s-docs__block-btn {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .s-docs__grid {
+    gap: 10px;
+  }
+
+  .s-docs__block {
+    padding: 20px;
+  }
+}

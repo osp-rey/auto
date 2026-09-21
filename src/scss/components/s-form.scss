@@ -1,0 +1,89 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-form {
+  position: relative;
+  padding: 50px 0px;
+  overflow: hidden;
+  z-index: 1;
+  @include tablet {
+    padding: 40px 0px;
+  }
+  &__wrap {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    @include laptop {
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    @include tablet {
+      gap: 20px;
+    }
+  }
+  &__info {
+    flex: 0 1 430px;
+    @include laptop {
+      flex: auto;
+      width: 100%;
+    }
+  }
+  &__content {
+    margin-top: 20px;
+  }
+  &__form-wrap {
+    flex: 1;
+  }
+  &__form {
+    box-shadow: 0 0 30px 0 rgba(5, 11, 21, 0.1);
+    background-color: white;
+    padding: 20px;
+    border-radius: 16px;
+    .form-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .form-control {
+        flex: 1;
+        @include desktop-big {
+          flex: 1 1 calc(33% - 10px);
+        }
+        @include tablet {
+          flex-basis: 100%;
+        }
+      }
+      .check-wrap {
+        width: 100%;
+        @include desktop-big {
+          width: auto;
+          flex: 1 1 calc(50% - 10px);
+        }
+      }
+      .btn-s {
+        @include desktop-big {
+          flex: 1 1 calc(50% - 10px);
+        }
+        @include tablet {
+          flex: auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__decor {
+    display: block;
+    position: absolute;
+    right: 140px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: -1;
+    max-width: none;
+
+    @include tablet-min {
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

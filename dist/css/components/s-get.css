@@ -1,0 +1,141 @@
+.s-get {
+  position: relative;
+  overflow: hidden;
+}
+
+.s-get__wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.s-get__block {
+  --offset: 60px;
+  position: relative;
+  padding: var(--offset) 0px;
+  z-index: 1;
+}
+
+.s-get__block:nth-child(odd) {
+  padding-right: var(--offset);
+}
+
+.s-get__block:nth-child(even) {
+  padding-left: var(--offset);
+}
+
+.s-get__block._center {
+  display: flex;
+  align-items: center;
+}
+
+.s-get__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.s-get__img img {
+  display: block;
+  object-fit: cover;
+  object-position: top 0 right 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.s-get__info {
+  max-width: 460px;
+}
+
+.s-get__content {
+  margin-top: 20px;
+  font-size: 20px;
+  max-width: 400px;
+}
+
+.s-get__form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  row-gap: 20px;
+}
+
+.s-get__form .form-grid .form-control._full {
+  grid-column: 2 span;
+}
+
+.s-get__form .btn-s[type=submit] {
+  width: 100%;
+}
+
+@media (max-width: 1365px) {
+  .s-get__block {
+    --offset: 40px;
+  }
+
+  .s-get__img {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 1199px) {
+  .s-get {
+    padding: 60px 0px;
+  }
+
+  .s-get__wrap {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .s-get__block {
+    padding: 0 !important;
+  }
+
+  .s-get__img {
+    display: none;
+  }
+
+  .s-get__info {
+    max-width: none;
+  }
+
+  .s-get__content {
+    max-width: none;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 767px) {
+  .s-get {
+    padding: 40px 0px;
+  }
+
+  .s-get__content {
+    font-size: 16px;
+  }
+
+  .s-get__form .form-grid {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .s-get__wrap {
+    gap: 20px;
+  }
+
+  .s-get__content {
+    font-size: 14px;
+  }
+
+  .s-get__form .form-grid .form-control {
+    grid-column: 2 span;
+  }
+}

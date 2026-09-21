@@ -1,0 +1,160 @@
+.card-car {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0 0 30px 0 rgba(5, 11, 21, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.card-car__slider {
+  width: 100%;
+}
+
+.card-car__slider .slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  z-index: 10;
+}
+
+.card-car__slider .slider-arrow._prev {
+  left: 0;
+}
+
+.card-car__slider .slider-arrow._next {
+  right: 0;
+}
+
+.card-car__slider .swiper-slide {
+  width: 100%;
+  aspect-ratio: 1/0.7;
+}
+
+.card-car__slider .swiper-slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s linear;
+}
+
+.card-car__slider .slider-pagination-r {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.card-car__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px;
+}
+
+.card-car__title {
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+}
+
+.card-car__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 10px 0px 15px 0px;
+  color: var(--storm);
+}
+
+.card-car__list li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.card-car__list li:not(:last-child)::after {
+  display: block;
+  content: "";
+  flex-shrink: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.card-car__bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px dashed var(--ghost);
+  padding-top: 15px;
+  margin-top: auto;
+}
+
+.card-car__price {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.card-car__date {
+  font-size: 14px;
+  color: var(--storm);
+}
+
+@media (min-width: 1025px) {
+  .card-car__slider .slider-pagination-r {
+    display: none;
+  }
+}
+
+@media (max-width: 1025px) {
+  .card-car__slider .slider-arrow {
+    display: none;
+  }
+
+  .card-car__body {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .card-car__title {
+    font-size: 14px;
+  }
+
+  .card-car__list {
+    margin-bottom: 10px;
+  }
+
+  .card-car__bottom {
+    padding-top: 10px;
+  }
+
+  .card-car__price {
+    font-size: 16px;
+  }
+
+  .card-car__date {
+    font-size: 12px;
+  }
+}
+
+@media (any-hover: hover) {
+  .card-car__slider .swiper-slide:hover img {
+    transform: scale(1.08);
+  }
+}
+
+@media (hover: none) {
+  .card-car__slider .swiper-slide:active img {
+    transform: scale(1.08);
+  }
+}

@@ -1,0 +1,56 @@
+.content-box {
+  line-height: 150%;
+}
+
+.content-box > * {
+  margin: 0;
+}
+
+.content-box > *:not(:last-child) {
+  margin-bottom: 1.2rem;
+}
+
+.content-box a {
+  text-decoration: underline;
+  color: var(--primary);
+}
+
+.content-box._big {
+  font-size: 20px;
+}
+
+@media (max-width: 1365px) {
+  .content-box._big {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .content-box._big {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 767px) {
+  .content-box._big {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .content-box._big {
+    font-size: 14px;
+  }
+}
+
+@media (any-hover: hover) {
+  .content-box a:hover {
+    text-decoration: none;
+  }
+}
+
+@media (hover: none) {
+  .content-box a:active {
+    text-decoration: none;
+  }
+}

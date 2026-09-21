@@ -43,4 +43,13 @@
       display: none;
     }
   }
+
+  &._dark {
+    --border: var(--dark);
+    --background: var(--dark);
+    --color: white;
+    --border-h: var(--black);
+    --background-h: var(--black);
+    --color-h: white;
+  }
 }
